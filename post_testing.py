@@ -153,6 +153,19 @@ def test_deep(ctx: TestContext):
     assert max(ctx.get_stack_limits()) <= 3
     return True
 
+
 @Test(test_filename="multiline_instruction", desc="Multiline instruction")
 def test_multiline_instruction(_: TestContext):
+    return True
+
+
+@Test(test_filename="non_commutativity_subtraction", desc="[JVM] Subtraction is not commutative, so optimizing stack requires swapping arguments")
+def test_non_commutativity_subtraction(ctx: TestContext):
+    assert count(r"\bswap\b", ctx.j_content) == 1
+    return True
+
+
+@Test(test_filename="non_commutativity_division", desc="[JVM] Division is not commutative, so optimizing stack requires swapping arguments")
+def test_non_commutativity_division(ctx: TestContext):
+    assert count(r"\bswap\b", ctx.j_content) == 1
     return True
