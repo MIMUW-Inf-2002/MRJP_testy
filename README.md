@@ -13,6 +13,6 @@ We don't test for:
 - division by zero,
 - use of undeclared variables,
 - int32 overflow,
-- printing an int without a swap;
+- printing an int without a swap,
 
 as it is not required by the assignment - according to dr Benke.
