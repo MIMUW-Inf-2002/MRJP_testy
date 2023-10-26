@@ -13,6 +13,5 @@ Handling of errors in Instant programs, such as:
 - division by zero,
 - use of undeclared variables,
 - int32 overflow,
-- etc.
 
-is not tested, as it is not required by the assignment.
+is not tested, as it is not required by the assignment - according to dr Benke.
