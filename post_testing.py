@@ -147,3 +147,7 @@ def test_zzz_random(ctx: TestContext, i: int):
 def test_deep(ctx: TestContext):
     assert max(ctx.get_stack_limits()) <= 3
     return True
+
+@Test(test_filename="multiline_instruction", desc="Multiline instruction")
+def test_multiline_instruction(_: TestContext):
+    return True
