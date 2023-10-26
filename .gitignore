@@ -6,4 +6,3 @@ tmp
 .vscode
 *.err
 *.out
-tests/random*
