@@ -1,0 +1,9 @@
+*.tar.gz
+*.tgz
+**/__pycache__
+tmp
+.idea
+.vscode
+*.err
+*.out
+tests/random*
