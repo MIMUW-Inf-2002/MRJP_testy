@@ -10,7 +10,7 @@ from core import Test
 from inspect import getmembers, isfunction
 
 LOGGER = logging.getLogger("main")
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO, format="%(message)s")
 
 
 def divider(*argv, **kwargs):
