@@ -96,6 +96,7 @@ def test_iload_and_istore(ctx: TestContext):
 
 @Test(test_filename="associativity_addition", desc="Addition should be right-associative")
 def test_associativity_addition(ctx: TestContext):
+    assert max(ctx.get_stack_limits()) <= 3
     assert count(
         r"\b40\b[\w\W]*\b30\b[\w\W]*\b20\b[\w\W]*\b10\b", ctx.j_content) == 1
     assert count(
@@ -104,12 +105,14 @@ def test_associativity_addition(ctx: TestContext):
 
 
 @Test(test_filename="associativity_substraction", desc="Substraction should be left-associative")
-def test_associativity_substraction(_: TestContext):
+def test_associativity_substraction(ctx: TestContext):
+    assert max(ctx.get_stack_limits()) <= 3
     return True
 
 
 @Test(test_filename="associativity_multiplication", desc="Multiplication should be left-associative")
 def test_associativity_multiplication(ctx: TestContext):
+    assert max(ctx.get_stack_limits()) <= 3
     assert count(
         r"\b20\b[\w\W]*\b30\b[\w\W]*\b40\b[\w\W]*\b50\b", ctx.j_content) == 1
     assert count(
@@ -119,6 +122,7 @@ def test_associativity_multiplication(ctx: TestContext):
 
 @Test(test_filename="associativity_division", desc="Division should be left-associative")
 def test_associativity_division(ctx: TestContext):
+    assert max(ctx.get_stack_limits()) <= 3
     return True
 
 
