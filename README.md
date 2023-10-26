@@ -1,6 +1,6 @@
 # Usage
 
-Run `python main.py` to run tests.
+Run `python3 main.py` to run tests.
 Optional arguments:
 
 - `--test-path` - path to test files (default: `./tests`)
