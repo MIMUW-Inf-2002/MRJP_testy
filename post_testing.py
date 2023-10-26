@@ -104,8 +104,8 @@ def test_associativity_addition(ctx: TestContext):
     return True
 
 
-@Test(test_filename="associativity_substraction", desc="Substraction should be left-associative")
-def test_associativity_substraction(ctx: TestContext):
+@Test(test_filename="associativity_subtraction", desc="Subtraction should be left-associative")
+def test_associativity_subtraction(ctx: TestContext):
     assert max(ctx.get_stack_limits()) <= 3
     return True
 
