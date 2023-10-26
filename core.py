@@ -227,6 +227,9 @@ class Test:
     @staticmethod
     def check_if_file_exists(file: str):
         if not os.path.isfile(file):
+            if file.endswith(".class"):
+                LOGGER.warning(f"Could not find file {file}, but this is expected for .class files")
+                LOGGER.warning(f"Please make sure that your classname has the same name as your testfile (including the upper/lowercase)")
             raise FileNotFoundError(f"Could not find file {file}")
         if not os.access(file, os.R_OK):
             raise PermissionError(f"File {file} is not readable")
