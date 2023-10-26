@@ -19,6 +19,12 @@ def divider(*argv, **kwargs):
 
 def detect_tar_file(tar_location: str) -> str:
     allowed_extensions = ["tar.gz", "tgz"]
+    for ext in allowed_extensions:
+        if tar_location.endswith(ext):
+            if not os.path.isfile(tar_location):
+                raise FileNotFoundError(f"Could not find tar file in {tar_location}")
+            LOGGER.info(f"Using declared tarball {tar_location}")
+            return tar_location
     for file in [file for x in allowed_extensions for file in pathlib.Path(tar_location).glob(f"*.{x}")]:
         LOGGER.info(f"Found tar file {file}")
         return str(file)
