@@ -92,7 +92,7 @@ def main():
     parser.add_argument("-p", "--test-path", default="tests", help="Path to tests")
     parser.add_argument("-t", "--tar-location", default="", help="Path to tar file")
     parser.add_argument("-w", "--workspace-location", default="tmp", help="Workspace for compilers")
-    parser.add_argument("-v", "--verbose", default=None, help="Verbose output dump file")
+    parser.add_argument("-v", "--save-subprocesses-outputs", default=None, help="Verbose output dump file")
     args = parser.parse_args()
     tests_path = os.path.join(main_file_path, args.test_path)
     tar_location = os.path.join(main_file_path, args.tar_location)
@@ -101,7 +101,7 @@ def main():
     extract_tar_file(tar_file_location, workspace)
     build_compiler(workspace)
     compilers = check_compiler(workspace)
-    run_tests(tests_path, compilers, workspace, args.verbose)
+    run_tests(tests_path, compilers, workspace, args.save_subprocesses_outputs)
 
 
 if __name__ == '__main__':
