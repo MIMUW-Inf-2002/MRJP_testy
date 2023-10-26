@@ -96,6 +96,8 @@ class Test:
     global_divider_length = lambda: ""
 
     def __init__(self, test_filename: str, desc: str = ""):
+        if test_filename is None:
+            test_filename = ""
         self.test_filename = test_filename
         self.desc = desc
         self.test_path = os.path.join(self.global_test_path, self.test_filename)
@@ -136,7 +138,7 @@ class Test:
         @wraps(func)
         def wrapper(*_args, **_kwargs):
             self.print_run_info()
-            if self.test_filename not in self.already_tested:
+            if self.test_filename and self.test_filename not in self.already_tested:
                 self.compile_jvm()
                 self.compile_llvm()
                 self.check_if_files_generated()
