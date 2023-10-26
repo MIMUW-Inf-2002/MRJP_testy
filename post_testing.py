@@ -52,8 +52,9 @@ def test_test07(_: TestContext):
     return True
 
 
-@Test(test_filename="empty", desc="Check if compiles if file is in the same directory (testfile is ignored!)")
+@Test(test_filename=None, desc="Checks if compiler works with source files in the same directory as the compiler")
 def test_same_directory(ctx: TestContext):
+    # Test file will be created in compiler directory
     tmp_file = "i_hope_this_is_a_non_conflicting_file_name"
     tmp_file_ins = f"{tmp_file}.ins"
     with open(os.path.join(ctx.workspace, tmp_file_ins), "w") as file:
