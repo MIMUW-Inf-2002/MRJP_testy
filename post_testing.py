@@ -135,8 +135,9 @@ def test_swaps(ctx: TestContext):
 
 @Test(test_filename="limit_locals", desc="[JVM] Verify is .limit locals set correctly")
 def test_limit_locals(ctx: TestContext):
-    # Minimum is 42 variables + one main argument. We allow one more as an upper bound.
-    assert 42 + 1 <= max(ctx.get_locals_limits()) <= 42 + 2
+    # Minimum is 42 variables (argument of main might be overwritten).
+    # We allow two more as an upper bound.
+    assert 42 <= max(ctx.get_locals_limits()) <= 42 + 2
     return True
 
 
