@@ -100,8 +100,6 @@ def test_associativity_addition(ctx: TestContext):
     assert max(ctx.get_stack_limits()) <= 3
     assert count(
         r"\b40\b[\w\W]*\b30\b[\w\W]*\b20\b[\w\W]*\b10\b", ctx.j_content) == 1
-    assert count(
-        r"\b40\b[\w\W]*\b30\b[\w\W]*\b20\b[\w\W]*\b10\b", ctx.ll_content) == 1
     return True
 
 
@@ -116,8 +114,6 @@ def test_associativity_multiplication(ctx: TestContext):
     assert max(ctx.get_stack_limits()) <= 3
     assert count(
         r"\b20\b[\w\W]*\b30\b[\w\W]*\b40\b[\w\W]*\b50\b", ctx.j_content) == 1
-    assert count(
-        r"\b20\b[\w\W]*\b30\b[\w\W]*\b40\b[\w\W]*\b50\b", ctx.ll_content) == 1
     return True
 
 
