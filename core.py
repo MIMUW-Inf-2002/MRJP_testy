@@ -147,7 +147,7 @@ class Test:
                 self.check_output(self.real_llvm_output_path, "LLVM")
                 self.check_output(self.real_jvm_output_path, "JVM")
                 self.already_tested.append(self.test_filename)
-            else:
+            elif self.test_filename:
                 LOGGER.info(f"This testfile has already been run, skipping compilation and output checks")
 
             LOGGER.info(f"Running after-checks")
