@@ -15,4 +15,4 @@ We don't test for:
 - int32 overflow,
 - printing an int without a swap,
 
-as it is not required by the assignment - according to dr Benke.
+as it is not required by the assignment - according to dr Benke - however it does not mean it cannot be checked in some lab groups.
