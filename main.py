@@ -86,7 +86,7 @@ def run_tests(tests_path: str, compilers: [str, str], workspace: str, verbose):
             if Test.is_test(function):
                 function()
     LOGGER.info(divider())
-    LOGGER.info("All tests passed")
+    LOGGER.info("\033[92mAll tests passed\033[0m")
     if verbose:
         Test.global_stdout_dump_path.close()
         Test.global_stderr_dump_path.close()

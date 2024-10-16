@@ -164,7 +164,7 @@ class Test:
             if not result:
                 raise TestException("Test failed in after-checks (without given reason)")
 
-            LOGGER.info(f"All checks passed")
+            LOGGER.info("\033[92mAll checks passed\033[0m")
 
         wrapper.test_object = self
         return wrapper
